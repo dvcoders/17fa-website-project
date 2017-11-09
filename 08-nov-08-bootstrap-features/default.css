@@ -1,0 +1,16 @@
+body
+{
+    padding-bottom: 15px;
+}
+
+#game
+{
+	align: center;
+	display: block;
+	margin: auto;
+}
+
+#profile-picture
+{
+	width: 200px;
+}
