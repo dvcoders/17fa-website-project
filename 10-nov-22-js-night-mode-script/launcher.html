@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Phaser.io Video Game</title>
+		<link rel = "stylesheet" href = "default.css">
+		<meta charset="utf-8">
+		<!-- Bootstrap files -->
+		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity = "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin = "anonymous">
+		<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity = "sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin = "anonymous">
+		<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity = "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin = "anonymous"></script>
+		<!-- Phaser files -->
+		<script type = "text/javascript" src = "phaser.min.js"></script>
+		<script type = "text/javascript" src = "game.js"></script>
+	</head>
+	<body>
+		<!-- Navigation bar -->
+		<nav class = "navbar navbar-inverse navbar-static-top">
+			<div class = "container">
+				<!-- Site logo -->
+				<div class = "navbar-header">
+					<a href = "index.html" class = "navbar-brand">Dee V. Coder</a>
+				</div>
+				<!-- Site links -->
+				<div>
+					<ul class = "nav navbar-nav navbar-right">
+						<li><a href = "about.html">About</a></li>
+						<li class = "active"><a href = "#">Game</a></li>
+						<li><a href = "contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class = "container">
+			<!-- Jumbotron -->
+			<div class = "jumbotron">
+				<div class = "row">
+                    <h1 class = "display-3">Phaser.io Video Game</h1>
+    				<div id = "game"></div>
+                </div>
+			</div>
+			<!-- Instructions -->
+			<h1 class = "display-3">How to play</h1>
+			<div class = "row">
+				<div class = "col-md-6">
+					<h4>Controls</h4>
+					<table class = "table">
+						<thead>
+							<th>Key</th>
+							<th>Action</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td><kbd>Up, left, right</kbd></td>
+								<td>Move</td>
+							</tr>
+							<tr>
+								<td><kbd>Down</kbd></td>
+								<td>Shoot</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class = "col-md-6">
+					<h4>Instructions</h4>
+					<dl>
+						<dd>- Avoid colliding with enemies</dd>
+						<dd>- Don't fall off the platform</dd>
+					</dl>
+				</div>
+			</div>
+            <!-- Night mode -->
+            <div class = "row pull-right">
+                <div class = "col-md-6">
+                    <button id = "night-mode" class = "btn">Night mode</button>
+                </div>
+            </div>
+		</div>
+        <!-- Night mode script -->
+        <script type = "text/javascript" src = "main.js"></script>
+        <script type = "text/javascript">
+            // Disable scrolling the page when pressing movement buttons in the game
+            window.addEventListener("keydown", function(key)
+            {
+                switch (key.keyCode)
+                {
+                    case 32: // Spacebar
+                    case 37: // Left arrow key
+                    case 38: // Up arrow key
+                    case 39: // Right arrow key
+                    case 40: // Down arrow key
+                    {
+                        // Prevent default action, which would be to scroll the page
+                        key.preventDefault();
+                        break;
+                    }
+                    default: // Other keys
+                    {
+                        break;
+                    }
+                }
+            });
+        </script>
+	</body>
+</html>
